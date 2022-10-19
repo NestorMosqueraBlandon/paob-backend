@@ -1,0 +1,28 @@
+{
+  "name": "fastify-typescript-api-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@fastify/cors": "^7.0.0",
+    "@fastify/swagger": "^6.0.1",
+    "dotenv": "^16.0.0",
+    "fastify": "^3.29.0",
+    "fastify-cors": "^6.1.0",
+    "glob": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "nodemon": "^2.0.16",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.4"
+  },
+  "scripts": {
+    "dev": "nodemon src/server/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "git add . && git commit -m 'deploy' && git push heroku"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
