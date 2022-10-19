@@ -1,12 +1,14 @@
-import { FastifyInstance } from "fastify"
-import {glob} from 'glob';
+import { FastifyInstance, RouteOptions } from "fastify";
+import { healthCheckRoute } from "./health-check";
 
-export const registerRoutes = (router: FastifyInstance) => {
-    const routes = glob.sync(__dirname + '/**/*.routes.*');
-    routes.map(route => register(route, router));
-}
+const routes: RouteOptions[] = [
+    healthCheckRoute
+];
 
-export const register = (routePath: string, router: FastifyInstance) => {
-    const route = require(routePath);
-    route.register(router);
-}
+export const registerRoutes = (fastify: FastifyInstance) => {
+    fastify.log.warn("Registering routes", routes);
+  
+    routes.map((route) => {
+      fastify.route(route);
+    });
+  };
