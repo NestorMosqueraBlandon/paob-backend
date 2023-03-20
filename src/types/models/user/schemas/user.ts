@@ -3,7 +3,10 @@ import { StatusType } from "types/common";
 export interface User {
     _id?: string;
     name: string;
+    email: string;
     username: string;
     password: string;
-    state?: StatusType;
+    photo: string;
+    status?: StatusType;
+    google: boolean;
 }

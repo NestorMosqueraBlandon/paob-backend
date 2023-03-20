@@ -1,0 +1,17 @@
+GET http://localhost:8000/api/v1/users HTTP/1.1
+Content-Type: application/json
+api-key: b31e2fdedecca33f6b198097a5949da167d2887c652a03704368335f27508362
+
+###
+
+POST http://localhost:8000/api/v1/users HTTP/1.1
+Content-Type: application/json
+api-key: b31e2fdedecca33f6b198097a5949da167d2887c652a03704368335f27508362
+
+{
+    "username": "amurgguser",
+    "email": "email@email.com",
+    "password": "mypassword",
+    "title": "Save money",
+    "text": "save money fro the future"
+}
