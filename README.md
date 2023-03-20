@@ -58,4 +58,4 @@ An API key is required to access this route.
 Contributions are welcome and appreciated. If you wish to contribute to this project, please create a Pull Request.
 
 ## License
-This project is licensed under the MIT License. For more information, please refer to the LICENSE file.
+This project is licensed under the MIT License. For more information, please refer to the [MIT licensed](./LICENSE) LICENSE file.
