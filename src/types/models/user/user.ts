@@ -1,7 +1,9 @@
+import { StatusType } from "types/common";
+
 export interface User {
-    uuid: any;
+    _id?: string;
+    name: string;
     username: string;
     password: string;
-    roles: string[];
-    state: boolean;
+    state?: StatusType;
 }

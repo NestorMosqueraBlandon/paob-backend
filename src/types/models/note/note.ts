@@ -1,5 +1,5 @@
 export interface Note {
-    uuid: string;
+    _id: string;
     user: string;
     title: string;
     text: string;
