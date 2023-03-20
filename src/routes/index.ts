@@ -1,8 +1,10 @@
 import { FastifyInstance, RouteOptions } from "fastify";
 import { healthCheckRoute } from "./health-check";
+import { notesRoutes } from "./notes";
 
 const routes: RouteOptions[] = [
-    healthCheckRoute
+    healthCheckRoute,
+    ...notesRoutes,
 ];
 
 export const registerRoutes = (fastify: FastifyInstance) => {

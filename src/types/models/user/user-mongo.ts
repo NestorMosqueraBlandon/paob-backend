@@ -1,5 +1,6 @@
 import { Schema } from "mongoose";
 import { User } from "./user";
+import crypto from "crypto";
 
 export const UserSchemaMongo = new Schema<User>({
     _id: {
@@ -10,9 +11,6 @@ export const UserSchemaMongo = new Schema<User>({
       },
     username: {type: String},
     password: {type: String},  
-    roles: [{
-        type: String,
-    }]
 }, {
     versionKey: false,
     timestamps: true
