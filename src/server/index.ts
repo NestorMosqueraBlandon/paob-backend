@@ -6,8 +6,7 @@ import { registerRoutes } from "routes";
 import Logger from "bunyan";
 import { verify } from "business-logic";
 
-const PORT = Number(process.env.PORT) || 5000;
-const HOST = process.env.HOST || "0.0.0.0";
+const { PORT, HOST, MONGODB_URL } = process.env;
 
 const log: Logger = Logger.createLogger({
   name: "paob",
@@ -22,7 +21,7 @@ const log: Logger = Logger.createLogger({
 const main = async () => {
   await initDataSources({
     mongoose: {
-      mongoUrl: process.env.MONGODB_URL,
+      mongoUrl: MONGODB_URL,
     },
   });
 
@@ -44,7 +43,7 @@ const main = async () => {
     { prefix: "api/v1" }
   );
 
-  await server.listen({ port: PORT, host: HOST }, () => {
+  await server.listen({ port: Number(PORT), host: HOST }, () => {
     log.info(`Backend App is running at http://localhost:${PORT}`);
     log.info("Press CTRL-c to stop");
   });

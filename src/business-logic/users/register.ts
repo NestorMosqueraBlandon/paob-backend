@@ -17,7 +17,6 @@ export const registerUser = async (data: CreateUserDto): Promise<User | Error> =
         throw new Error('Username already exists')
     }
     
-    
     const user = new model({name, username, email, password});
     const salt = bcrypt.genSaltSync(10);
     user.password = bcrypt.hashSync(password, salt);

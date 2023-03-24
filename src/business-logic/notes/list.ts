@@ -1,5 +1,6 @@
 import { Collection, getModel } from "constant-definitions";
 import { Note, NoteSchemaMongo, Result } from "types";
+import { StatusType } from '../../types/common/constants';
 
 /**
  * Return an list paginated of computers.
@@ -21,7 +22,7 @@ export const getAllNotes = async (
   const pages = Math.ceil(total / pageSize);
 
   const notes = await model
-    .find({ $and: [{ status: true }] })
+    .find({ $and: [{ status: StatusType.ACTIVE }] })
     .skip(skip)
     .limit(pageSize);
 

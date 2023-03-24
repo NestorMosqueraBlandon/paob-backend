@@ -1,7 +1,7 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
 const { NODE_ENV, API_KEY } = process.env;
 
-/**
+/** Middleware for verify https requess and api-key
  * @param request Fastify request
  * @param reply Fastify reply
  * @param done Callback function
