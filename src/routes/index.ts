@@ -1,4 +1,5 @@
 import { FastifyInstance, RouteOptions } from "fastify";
+import { authRoutes } from "./auth";
 import { healthCheckRoute } from "./health-check";
 import { notesRoutes } from "./notes";
 import { usersRoutes } from "./users";
@@ -6,7 +7,8 @@ import { usersRoutes } from "./users";
 const routes: RouteOptions[] = [
     healthCheckRoute,
     ...notesRoutes,
-    ...usersRoutes
+    ...usersRoutes,
+    ...authRoutes
 ];
 
 export const registerRoutes = (fastify: FastifyInstance) => {
